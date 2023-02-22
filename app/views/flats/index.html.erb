@@ -1,0 +1,19 @@
+<%= render 'navbar' %>
+
+<div class="container py-3">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="card-flat col-4">
+        <div class="card-flat-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+        <div class="card-flat-content">
+          <h2><%= link_to flat.name, flat_path(flat) %></h2>
+          <p><%= flat.address %></p>
+          <div class="flex">
+            <p><%= flat.number_of_guests %></p>
+            <p><%= flat.price_per_night %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
